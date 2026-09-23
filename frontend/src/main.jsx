@@ -11,7 +11,7 @@ const riskLabelsPlugin={id:"riskLabels",afterDatasetsDraw(chart){const dataset=c
 const riskChartOptions={responsive:true,maintainAspectRatio:true,cutout:"54%",plugins:{legend:{position:"top",labels:{color:"#f4f7f1",font:{size:15,weight:"600"},padding:20,usePointStyle:false}},tooltip:{callbacks:{label(context){const total=context.dataset.data.reduce((sum,value)=>sum+Number(value),0);return ` ${context.label}: ${Math.round(Number(context.raw)/total*100)}%`}}}}};
 const lineChartOptions={responsive:true,maintainAspectRatio:true,interaction:{mode:"index",intersect:false},plugins:{legend:{position:"top",labels:{color:"#245465",font:{size:15,weight:"600"},padding:20,usePointStyle:true}},tooltip:{mode:"index",intersect:false}},scales:{x:{ticks:{color:"#315866",font:{size:12}},grid:{color:"#6f9eaa55"}},y:{ticks:{color:"#315866",font:{size:12}},grid:{color:"#6f9eaa55"}}}};
 
-const API="http://127.0.0.1:8000/api";
+const API="https://prj-666-climate-risk-platform-2.onrender.com/api";
 function api(){const t=localStorage.getItem("token"); return axios.create({baseURL:API,headers:t?{Authorization:`Bearer ${t}`}:{}})}
 function Login({onLogin}){const [u,setU]=useState("admin"),[p,setP]=useState("PRJ666@Demo"),[err,setErr]=useState("");
 async function go(e){e.preventDefault();try{const r=await axios.post(API+"/auth/login",{username:u,password:p});localStorage.setItem("token",r.data.access_token);onLogin()}catch(x){setErr(x.response?.data?.detail||"Login failed")}}
