@@ -1,0 +1,20 @@
+{
+  "project_id": "PRJ_666",
+  "title": "Climate Change Impact Assessment and Environmental Risk Prediction Platform",
+  "stack": [
+    "FastAPI",
+    "React",
+    "Python",
+    "Scikit-learn",
+    "Pandas",
+    "SQLite demo store",
+    "MongoDB-ready",
+    "Docker"
+  ],
+  "sdg": "SDG 13 - Climate Action",
+  "demo_login": {
+    "username": "admin",
+    "password": "PRJ666@Demo"
+  },
+  "data_note": "Synthetic demonstration dataset; not real climate observations."
+}

@@ -1,0 +1,10 @@
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/ml/__pycache__/
+backend/climate.db
+backend/models/*.joblib
+backend/models/metrics.json
+frontend/node_modules/
+frontend/dist/
+.env
